@@ -1,4 +1,5 @@
-import {Component, OnInit, Renderer2} from '@angular/core';
+import { DOCUMENT } from '@angular/common';
+import {Component, Inject, OnInit, Renderer2} from '@angular/core';
 import {BlogPost} from "../types";
 
 @Component({
@@ -10,6 +11,7 @@ export class AppComponent implements OnInit {
   blogPosts: BlogPost[];
 
   theme: boolean = false
+  constructor(@Inject(DOCUMENT) private document:Document){}
 
   ngOnInit() {
     this.blogPosts = [...BLOG_POSTS].map((blogPost, index) => {
@@ -21,7 +23,12 @@ export class AppComponent implements OnInit {
   }
 
   applyTheme(value: boolean) {
-    this.theme=value;
+    if(value){
+      this.document.body.classList.add('theme--dark');
+    }else{
+      
+      this.document.body.classList.remove('theme--dark');
+    }
   }
 }
 

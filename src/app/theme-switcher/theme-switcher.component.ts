@@ -7,6 +7,7 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 })
 export class ThemeSwitcherComponent implements OnInit {
   isDark: boolean = false;
+  btn_name:string = 'Light Theme'; 
   @Output() onThemeChanged: EventEmitter<any> = new EventEmitter<boolean>();
 
   ngOnInit() {
@@ -20,5 +21,6 @@ export class ThemeSwitcherComponent implements OnInit {
   onSwitch(){
     this.onThemeChanged.emit(!this.isDark)
     this.isDark=!this.isDark;
+    this.btn_name = this.isDark ? 'Dark Theme' : 'Light Theme'
   }
 }
