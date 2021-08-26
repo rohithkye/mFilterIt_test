@@ -9,6 +9,8 @@ import {BlogPost} from "../types";
 export class AppComponent implements OnInit {
   blogPosts: BlogPost[];
 
+  theme: boolean = false
+
   ngOnInit() {
     this.blogPosts = [...BLOG_POSTS].map((blogPost, index) => {
       blogPost.id = index + 1;
@@ -18,13 +20,10 @@ export class AppComponent implements OnInit {
     });
   }
 
-  applyTheme(value: any) {
-
+  applyTheme(value: boolean) {
+    this.theme=value;
   }
-
-
 }
-
 
 export const BLOG_POSTS: BlogPost[] = [
   {

@@ -7,7 +7,7 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 })
 export class ThemeSwitcherComponent implements OnInit {
   isDark: boolean = false;
-  @Output() onThemeChanged: EventEmitter<any> = new EventEmitter<any>();
+  @Output() onThemeChanged: EventEmitter<any> = new EventEmitter<boolean>();
 
   ngOnInit() {
   }
@@ -17,4 +17,8 @@ export class ThemeSwitcherComponent implements OnInit {
     return this.isDark ? 'brightness_high' : 'wb_sunny'
   }
 
+  onSwitch(){
+    this.onThemeChanged.emit(!this.isDark)
+    this.isDark=!this.isDark;
+  }
 }
