@@ -1,0 +1,9 @@
+<!--The content below is only a placeholder and can be replaced.-->
+
+<h8k-navbar header="Theme Switcher"></h8k-navbar>
+
+<div class="layout-column mt-75 pb-50 mx-16">
+  <app-theme-switcher (onThemeChanged)="applyTheme($event)"></app-theme-switcher>
+  <app-blog [blogPosts]="blogPosts"></app-blog>
+</div>
+

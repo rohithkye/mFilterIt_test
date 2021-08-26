@@ -1,0 +1,52 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "node_modules/h8k-design/lib/index";
+
+html, body {
+  height: 100%;
+}
+
+.app-header {
+  &.light {
+    background: white;
+    border-bottom: none;
+  }
+}
+
+
+.flex-30 {
+  flex: 0 0 30%;
+  width: 30%;
+}
+
+.flex-25 {
+  flex: 0 0 25%;
+  width: 25%;
+}
+
+.card {
+  box-sizing: border-box;
+  -webkit-box-orient: vertical;
+  flex-direction: column;
+}
+
+.card-image {
+  width: 100%;
+}
+
+.theme--dark {
+
+  --app-background: #121212;
+
+  --toolbar-background-color: #171a1f;
+  --toolbar-box-shadow-color: rgba(0, 0, 0, 0.3);
+  --toolbar-border-color: #171a1f;
+
+  --card-shadow-color: rgba(0, 0, 0, 0.3);
+  --card-hover-shadow-color: rgba(0, 0, 0, 0.5);
+
+}
+
+:root {
+  --card-margin-gutter: 16px;
+}
